@@ -10,11 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var LblMessage: UILabel!
+    @IBOutlet weak var TxtName: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
+    @IBAction func pushButton(_ sender: UIButton) {
+        let userName: String = TxtName.text ?? "Unknown"
+        LblMessage.text = "Hello " + userName
+    }
+    
 
 }
 
