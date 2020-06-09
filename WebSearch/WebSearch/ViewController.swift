@@ -7,14 +7,22 @@
 //
 
 import UIKit
+import WebKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var TxtAddress: UITextField!
+    @IBOutlet weak var webView: WKWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let startURL = URL(string: "https://www.apple.com/")!
+        webView.load(URLRequest(url: startURL))
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func WebNavigate(_ sender: Any) {
+    }
+    
 }
 
