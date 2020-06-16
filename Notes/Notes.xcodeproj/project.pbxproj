@@ -13,6 +13,7 @@
 		09F8BC662498F5A1005D01B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09F8BC642498F5A1005D01B7 /* Main.storyboard */; };
 		09F8BC682498F5A3005D01B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09F8BC672498F5A3005D01B7 /* Assets.xcassets */; };
 		09F8BC6B2498F5A3005D01B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09F8BC692498F5A3005D01B7 /* LaunchScreen.storyboard */; };
+		09F8BC732498F68E005D01B7 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F8BC722498F68E005D01B7 /* Note.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		09F8BC672498F5A3005D01B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09F8BC6A2498F5A3005D01B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09F8BC6C2498F5A3005D01B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09F8BC722498F68E005D01B7 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				09F8BC602498F5A1005D01B7 /* SceneDelegate.swift */,
 				09F8BC622498F5A1005D01B7 /* ViewController.swift */,
 				09F8BC642498F5A1005D01B7 /* Main.storyboard */,
+				09F8BC722498F68E005D01B7 /* Note.swift */,
 				09F8BC672498F5A3005D01B7 /* Assets.xcassets */,
 				09F8BC692498F5A3005D01B7 /* LaunchScreen.storyboard */,
 				09F8BC6C2498F5A3005D01B7 /* Info.plist */,
@@ -141,6 +144,7 @@
 				09F8BC632498F5A1005D01B7 /* ViewController.swift in Sources */,
 				09F8BC5F2498F5A1005D01B7 /* AppDelegate.swift in Sources */,
 				09F8BC612498F5A1005D01B7 /* SceneDelegate.swift in Sources */,
+				09F8BC732498F68E005D01B7 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
