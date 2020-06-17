@@ -11,11 +11,16 @@ import SQLite3
 
 struct Note {
     let id: Int
-    let content: String
+    var content: String
 }
 
 class NoteManager {
     var database: OpaquePointer!
+    
+    static let main = NoteManager()
+    
+    private init() {
+    }
     
     func connect() {
         if database != nil {
@@ -24,7 +29,7 @@ class NoteManager {
         
         do {
             
-            let databaseURL = try FileManager.default.url(for: .userDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent("notes.sqlite3")
+            let databaseURL = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent("notes.sqlite3")
             if sqlite3_open(databaseURL.path, &database) == SQLITE_OK {
                 if sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS notes (contents TEXT)", nil, nil, nil) == SQLITE_OK {
                     
@@ -74,5 +79,22 @@ class NoteManager {
         
         sqlite3_finalize(statement)
         return result
+    }
+    
+    func save(note: Note) {
+        connect()
+        var statement: OpaquePointer!
+        if sqlite3_prepare_v2(database, "UPDATE notes SET contents = ? WHERE rowid = ?", -1, &statement, nil) != SQLITE_OK {
+            print("Error creating select")
+        }
+        
+        sqlite3_bind_text(statement, 1, NSString(string: note.content).utf8String, -1, nil)
+        sqlite3_bind_int(statement, 2, Int32(note.id))
+        
+        if sqlite3_step(statement) != SQLITE_OK {
+            print("Error running update")
+        }
+        
+        sqlite3_finalize(statement)
     }
 }

@@ -10,10 +10,21 @@ import UIKit
 
 class ViewController: UITableViewController {
     var notes: [Note] = []
-
+    
+    @IBAction func createNote(_ sender: Any) {
+        let _ = NoteManager.main.create()
+        reload()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        reload()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        reload()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -30,5 +41,17 @@ class ViewController: UITableViewController {
         return cell
     }
 
+    func reload() {
+        notes = NoteManager.main.getAllNotes()
+        self.tableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "NoteSegue" {
+            if let destination = segue.destination as? NoteViewController {
+                destination.note = notes[tableView.indexPathForSelectedRow!.row]
+            }
+        }
+    }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09C3B467249A43590087A4AF /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C3B466249A43590087A4AF /* NoteViewController.swift */; };
 		09F8BC5F2498F5A1005D01B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F8BC5E2498F5A1005D01B7 /* AppDelegate.swift */; };
 		09F8BC612498F5A1005D01B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F8BC602498F5A1005D01B7 /* SceneDelegate.swift */; };
 		09F8BC632498F5A1005D01B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F8BC622498F5A1005D01B7 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09C3B466249A43590087A4AF /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		09F8BC5B2498F5A1005D01B7 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09F8BC5E2498F5A1005D01B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09F8BC602498F5A1005D01B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				09F8BC622498F5A1005D01B7 /* ViewController.swift */,
 				09F8BC642498F5A1005D01B7 /* Main.storyboard */,
 				09F8BC722498F68E005D01B7 /* Note.swift */,
+				09C3B466249A43590087A4AF /* NoteViewController.swift */,
 				09F8BC672498F5A3005D01B7 /* Assets.xcassets */,
 				09F8BC692498F5A3005D01B7 /* LaunchScreen.storyboard */,
 				09F8BC6C2498F5A3005D01B7 /* Info.plist */,
@@ -144,6 +147,7 @@
 				09F8BC632498F5A1005D01B7 /* ViewController.swift in Sources */,
 				09F8BC5F2498F5A1005D01B7 /* AppDelegate.swift in Sources */,
 				09F8BC612498F5A1005D01B7 /* SceneDelegate.swift in Sources */,
+				09C3B467249A43590087A4AF /* NoteViewController.swift in Sources */,
 				09F8BC732498F68E005D01B7 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -3,13 +3,14 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Notes-->
         <scene sceneID="nUr-qM-xGS">
             <objects>
-                <tableViewController id="8jf-v5-ucW" sceneMemberID="viewController">
+                <tableViewController id="8jf-v5-ucW" customClass="ViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2Zw-bq-x03">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,6 +32,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="b5R-9n-WrC" kind="show" identifier="NoteSegue" id="DRl-80-CtT"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -38,11 +42,51 @@
                             <outlet property="delegate" destination="8jf-v5-ucW" id="Yev-tG-pwY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Notes" id="1Fv-nU-t8l"/>
+                    <navigationItem key="navigationItem" title="Notes" id="1Fv-nU-t8l">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="JKS-r7-PBm">
+                            <connections>
+                                <action selector="createNote:" destination="8jf-v5-ucW" id="9qw-EC-sGa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WNu-Qf-1UP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1044.9275362318842" y="118.52678571428571"/>
+        </scene>
+        <!--Note View Controller-->
+        <scene sceneID="d7r-6v-ieF">
+            <objects>
+                <viewController id="b5R-9n-WrC" customClass="NoteViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GRS-Jb-ZxR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="957-Br-bEd">
+                                <rect key="frame" x="20" y="88" width="374" height="760"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Gc8-j1-qV4" firstAttribute="bottom" secondItem="957-Br-bEd" secondAttribute="bottom" constant="644" id="Bc4-6x-VrC"/>
+                            <constraint firstItem="957-Br-bEd" firstAttribute="top" secondItem="Gc8-j1-qV4" secondAttribute="top" id="cTP-Q1-kXu"/>
+                            <constraint firstItem="957-Br-bEd" firstAttribute="leading" secondItem="Gc8-j1-qV4" secondAttribute="leading" id="fO8-8F-mOa"/>
+                            <constraint firstItem="Gc8-j1-qV4" firstAttribute="trailing" secondItem="957-Br-bEd" secondAttribute="trailing" constant="187" id="uOm-lV-F9u"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Gc8-j1-qV4"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="PY5-yP-0Aj"/>
+                    <connections>
+                        <outlet property="textView" destination="957-Br-bEd" id="B5j-en-0L5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YIX-s8-O8Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1860.8695652173915" y="118.52678571428571"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0PQ-9W-PCu">
