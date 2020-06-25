@@ -38,11 +38,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let image = info[
+        guard let image = info[.originalImage] as? UIImage else {
+            fatalError("Expected dictionary containing image, but was provided with this: \(info)")
+        }
+        
+        imagePicked.image = image
+        dismiss(animated: true, completion: nil)
     }
     
     
     @IBAction func saveImage(_ sender: Any) {
+        let imageData = imagePicked.image?.jpegData(compressionQuality: 0.6)
+        let compressedJPGImage = UIImage(data: imageData!)
+        UIImageWriteToSavedPhotosAlbum(compressedJPGImage!, nil, nil, nil)
+        
+        let alertController = UIAlertController(title: "Complete", message: "Your image has been saved", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 
