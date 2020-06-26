@@ -26,7 +26,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        <#code#>
+        let locValue: CLLocationCoordinate2D = manager.location!.coordinate
+        print("location: \(locValue.latitude) \(locValue.longitude)")
+        let userLoc = locations.last
+        let viewRegion = MKCoordinateRegion(center: (userLoc!.coordinate), latitudinalMeters: 600, longitudinalMeters: 600)
+        self.mapView.showsUserLocation = true
+        self.mapView.setRegion(viewRegion, animated: true)
     }
 }
 
