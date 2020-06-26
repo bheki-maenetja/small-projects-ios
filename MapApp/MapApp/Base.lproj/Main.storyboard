@@ -15,21 +15,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="w40-UL-Bfa">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="w40-UL-Bfa">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVn-Lq-P7P">
-                                <rect key="frame" x="20" y="794" width="374" height="68"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVn-Lq-P7P">
+                                <rect key="frame" x="20" y="771" width="374" height="91"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="91" id="Vmh-Yo-c0E"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="w40-UL-Bfa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3bo-vs-xor"/>
+                            <constraint firstItem="EVn-Lq-P7P" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="AbX-32-QWD"/>
+                            <constraint firstItem="w40-UL-Bfa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KNb-LA-eou"/>
+                            <constraint firstItem="EVn-Lq-P7P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="SAO-he-1eN"/>
+                            <constraint firstAttribute="bottom" secondItem="w40-UL-Bfa" secondAttribute="bottom" id="jaQ-Ld-dNy"/>
+                            <constraint firstItem="w40-UL-Bfa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tMd-8j-RYa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EVn-Lq-P7P" secondAttribute="trailing" constant="20" id="v6C-6p-1Qb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="areaLabel" destination="EVn-Lq-P7P" id="kff-go-v17"/>
+                        <outlet property="mapView" destination="w40-UL-Bfa" id="7e9-Jr-VGL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
