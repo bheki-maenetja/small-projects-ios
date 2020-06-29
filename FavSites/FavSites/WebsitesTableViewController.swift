@@ -42,13 +42,13 @@ class WebsitesTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath)
+        var cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier")
         if cell == nil {
             cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cellIdentifier")
         }
-        cell.textLabel?.text = websites[indexPath.row][0]
-        cell.detailTextLabel!.text = websites[indexPath.row][1]
-        return cell
+        cell?.textLabel?.text = websites[indexPath.row][0]
+        cell?.detailTextLabel!.text = websites[indexPath.row][1]
+        return cell!
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
