@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ProfileViewController: UIViewController {
 
@@ -23,10 +24,23 @@ class ProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func alertSomething(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     @IBAction func SaveTouch(_ sender: Any) {
     }
     
     @IBAction func LogoutTouch(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            self.performSegue(withIdentifier: "goLogin", sender: self)
+        } catch {
+            alertSomething(title: "Logout Error", message: "Please try again")
+        }
     }
     
     @IBAction func UpdatePhoto(_ sender: Any) {

@@ -12,7 +12,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iosauthdemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fqb-sd-hda">
@@ -61,9 +61,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="uod-5g-YbK"/>
                     <connections>
                         <outlet property="TxtPassword" destination="nwc-9y-rfI" id="brz-g0-Aap"/>
                         <outlet property="TxtUsername" destination="kgD-Tg-0rg" id="5ED-J9-3Fq"/>
+                        <segue destination="gqZ-DZ-wEk" kind="show" identifier="goProfile" id="8cC-9K-C3w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -75,7 +77,7 @@
             <objects>
                 <viewController id="gqZ-DZ-wEk" customClass="ProfileViewController" customModule="iosauthdemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Yp-LR-27d">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CY5-3K-Vpa">
@@ -165,12 +167,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="uuI-uS-3sk"/>
                     </view>
+                    <navigationItem key="navigationItem" id="8TN-nx-iu7"/>
                     <connections>
                         <outlet property="ProfileImage" destination="CY5-3K-Vpa" id="sFz-Ee-ah1"/>
                         <outlet property="TxtBio" destination="9b3-ys-rLt" id="JK6-af-4r8"/>
                         <outlet property="TxtCity" destination="4BI-e4-I8e" id="yBs-jw-Cjj"/>
                         <outlet property="TxtName" destination="afK-yD-i6X" id="XfS-GR-5h0"/>
                         <outlet property="TxtWeb" destination="Ka2-g3-skF" id="rvB-JQ-oGj"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goLogin" id="RoN-SH-BPI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A0V-pX-XTv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
