@@ -1,0 +1,6 @@
+framework module Pods_iosauthdemo {
+  umbrella header "Pods-iosauthdemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
