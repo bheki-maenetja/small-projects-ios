@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		09E695FE24ACB62500C1CEFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09E695FD24ACB62500C1CEFF /* Assets.xcassets */; };
 		09E6960124ACB62500C1CEFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09E695FF24ACB62500C1CEFF /* LaunchScreen.storyboard */; };
 		09E6960924ACB6B200C1CEFF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09E6960824ACB6B200C1CEFF /* GoogleService-Info.plist */; };
+		09E8DF6D24ACC06100467E32 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E8DF6C24ACC06100467E32 /* ProfileViewController.swift */; };
 		5EA8976B4AFB69BF406DAE6D /* Pods_iosauthdemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B336D1486268F843375BB0A /* Pods_iosauthdemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		09E6960024ACB62500C1CEFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09E6960224ACB62500C1CEFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09E6960824ACB6B200C1CEFF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		09E8DF6C24ACC06100467E32 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		663878485D28D8C31C835F22 /* Pods-iosauthdemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosauthdemo.debug.xcconfig"; path = "Target Support Files/Pods-iosauthdemo/Pods-iosauthdemo.debug.xcconfig"; sourceTree = "<group>"; };
 		7B336D1486268F843375BB0A /* Pods_iosauthdemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosauthdemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C48F622172B18FA8BFF08046 /* Pods-iosauthdemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosauthdemo.release.xcconfig"; path = "Target Support Files/Pods-iosauthdemo/Pods-iosauthdemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				09E695FA24ACB62300C1CEFF /* Main.storyboard */,
 				09E695FD24ACB62500C1CEFF /* Assets.xcassets */,
 				09E695FF24ACB62500C1CEFF /* LaunchScreen.storyboard */,
+				09E8DF6C24ACC06100467E32 /* ProfileViewController.swift */,
 				09E6960224ACB62500C1CEFF /* Info.plist */,
 				09E6960824ACB6B200C1CEFF /* GoogleService-Info.plist */,
 			);
@@ -83,7 +86,6 @@
 				663878485D28D8C31C835F22 /* Pods-iosauthdemo.debug.xcconfig */,
 				C48F622172B18FA8BFF08046 /* Pods-iosauthdemo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -213,6 +215,7 @@
 			files = (
 				09E695F924ACB62300C1CEFF /* ViewController.swift in Sources */,
 				09E695F524ACB62300C1CEFF /* AppDelegate.swift in Sources */,
+				09E8DF6D24ACC06100467E32 /* ProfileViewController.swift in Sources */,
 				09E695F724ACB62300C1CEFF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
