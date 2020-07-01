@@ -10,11 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var TxtUsername: UITextField!
+    @IBOutlet weak var TxtPassword: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func LoginTouch(_ sender: Any) {
+    }
+    
+    @IBAction func RegisterTouch(_ sender: Any) {
+    }
+    
 }
 
