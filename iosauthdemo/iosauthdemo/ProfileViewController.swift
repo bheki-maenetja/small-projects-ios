@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var ProfileImage: UIImageView!
     @IBOutlet weak var TxtName: UITextField!
@@ -32,6 +32,17 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func SaveTouch(_ sender: Any) {
+        if TxtName.text == "" || TxtCity.text == "" || TxtWeb.text == "" || TxtBio.text == "" {
+            alertSomething(title: "Entry Error", message: "Please enter values in all text boxes")
+        } else {
+            var ref: DatabaseReference!
+            let userId = Auth.auth().currentUser?.uid
+            ref.child("users/" + userId! + "/name").setValue(TxtName.text)
+            ref.child("users/" + userId! + "/city").setValue(TxtCity.text)
+            ref.child("users/" + userId! + "/web").setValue(TxtWeb.text)
+            ref.child("users/" + userId! + "/bio").setValue(TxtBio.text)
+            alertSomething(title: "Profile Updated", message: "Your profile has been successfully updated")
+        }
     }
     
     @IBAction func LogoutTouch(_ sender: Any) {
