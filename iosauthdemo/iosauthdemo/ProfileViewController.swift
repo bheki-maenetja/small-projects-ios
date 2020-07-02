@@ -55,6 +55,35 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     @IBAction func UpdatePhoto(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = true
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.originalImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided with \(info)")
+        }
+        ProfileImage.image = image
+        dismiss(animated: true, completion: nil)
+        imageUpload()
+    }
+    
+    func imageUpload() {
+        let userId = Auth.auth().currentUser?.uid
+        let imageData = ProfileImage.image!.jpegData(compressionQuality: 0.4)
+        let storageRef = Storage.storage().reference().child("img/" + userId! + ".jpg")
+        
+        if let uploadData = imageData {
+            storageRef.putData(uploadData, metadata: nil) {
+                (metadata, error) in
+                if error != nil {
+                    self.alertSomething(title: "Profile Photo", message: "There was an error uploading your photo")
+                }
+            }
+        }
     }
     
     /*
