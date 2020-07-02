@@ -22,6 +22,30 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        let userId = Auth.auth().currentUser?.uid
+        
+        ref.child("users").child(userId!).observeSingleEvent(of: .value, with: {
+            (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            self.TxtName.text = value?["name"] as? String ?? ""
+            self.TxtCity.text = value?["city"] as? String ?? ""
+            self.TxtWeb.text = value?["web"] as? String ?? ""
+            self.TxtBio.text = value?["bio"] as? String ?? ""
+            
+            let imgRef = Storage.storage().reference().child("img/" + userId! + ".jpg")
+            imgRef.getData(maxSize: 1 * 1024 * 1024) {
+                data, error in
+                if let error = error {
+                } else {
+                    let image = UIImage(data: data!)
+                    self.ProfileImage.image = image
+                }
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
     
     func alertSomething(title: String, message: String) {
@@ -36,6 +60,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             alertSomething(title: "Entry Error", message: "Please enter values in all text boxes")
         } else {
             var ref: DatabaseReference!
+            ref = Database.database().reference()
             let userId = Auth.auth().currentUser?.uid
             ref.child("users/" + userId! + "/name").setValue(TxtName.text)
             ref.child("users/" + userId! + "/city").setValue(TxtCity.text)
