@@ -19,6 +19,7 @@
 		099F8DB124B353C00006BD0F /* explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = 099F8DAF24B353C00006BD0F /* explosion.wav */; };
 		099F8DB324B355130006BD0F /* BlockTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099F8DB224B355130006BD0F /* BlockTile.swift */; };
 		099F8DB524B355C30006BD0F /* BlockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099F8DB424B355C30006BD0F /* BlockModel.swift */; };
+		099F8DB724B358510006BD0F /* BlockUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099F8DB624B358510006BD0F /* BlockUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		099F8DAF24B353C00006BD0F /* explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = explosion.wav; path = "../../../../../Downloads/All code examples/Chapter 7/explosion.wav"; sourceTree = "<group>"; };
 		099F8DB224B355130006BD0F /* BlockTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTile.swift; sourceTree = "<group>"; };
 		099F8DB424B355C30006BD0F /* BlockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockModel.swift; sourceTree = "<group>"; };
+		099F8DB624B358510006BD0F /* BlockUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				099F8D9824B34FF80006BD0F /* GameScene.sks */,
 				099F8D9A24B34FF80006BD0F /* Actions.sks */,
 				099F8D9C24B34FF80006BD0F /* GameScene.swift */,
+				099F8DB624B358510006BD0F /* BlockUtils.swift */,
 				099F8D9E24B34FF80006BD0F /* GameViewController.swift */,
 				099F8DA024B34FF80006BD0F /* Main.storyboard */,
 				099F8DA324B34FF90006BD0F /* Assets.xcassets */,
@@ -163,6 +166,7 @@
 				099F8DB524B355C30006BD0F /* BlockModel.swift in Sources */,
 				099F8D9D24B34FF80006BD0F /* GameScene.swift in Sources */,
 				099F8D9F24B34FF80006BD0F /* GameViewController.swift in Sources */,
+				099F8DB724B358510006BD0F /* BlockUtils.swift in Sources */,
 				099F8D9724B34FF80006BD0F /* AppDelegate.swift in Sources */,
 				099F8DB324B355130006BD0F /* BlockTile.swift in Sources */,
 			);

@@ -17,7 +17,21 @@ class GameScene: SKScene {
     var gameModel = BlockModel()
     
     func setup() {
+        self.gameModel.myGameScene = self
         self.gameModel.setupModel()
+        self.gameModel.populateModel()
+    }
+    
+    func setupSprite(_ withImage:Int) -> BlockTile {
+        let sprite = BlockTile(imageNamed: "tile_" + String(withImage))
+        
+        sprite.tileType = withImage
+        sprite.xScale = 1.5
+        sprite.yScale = 1.5
+        
+        self.addChild(sprite)
+        
+        return sprite
     }
     
     override func didMove(to view: SKView) {
