@@ -14,8 +14,14 @@ class GameScene: SKScene {
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
     
+    var gameModel = BlockModel()
+    
+    func setup() {
+        self.gameModel.setupModel()
+    }
+    
     override func didMove(to view: SKView) {
-        
+        self.setup()
     }
     
     

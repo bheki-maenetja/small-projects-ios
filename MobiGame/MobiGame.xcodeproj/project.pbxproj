@@ -17,6 +17,8 @@
 		099F8DA724B34FF90006BD0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 099F8DA524B34FF90006BD0F /* LaunchScreen.storyboard */; };
 		099F8DB024B353C00006BD0F /* selection.wav in Resources */ = {isa = PBXBuildFile; fileRef = 099F8DAE24B353C00006BD0F /* selection.wav */; };
 		099F8DB124B353C00006BD0F /* explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = 099F8DAF24B353C00006BD0F /* explosion.wav */; };
+		099F8DB324B355130006BD0F /* BlockTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099F8DB224B355130006BD0F /* BlockTile.swift */; };
+		099F8DB524B355C30006BD0F /* BlockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099F8DB424B355C30006BD0F /* BlockModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		099F8DA824B34FF90006BD0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		099F8DAE24B353C00006BD0F /* selection.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = selection.wav; path = "../../../../../Downloads/All code examples/Chapter 7/selection.wav"; sourceTree = "<group>"; };
 		099F8DAF24B353C00006BD0F /* explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = explosion.wav; path = "../../../../../Downloads/All code examples/Chapter 7/explosion.wav"; sourceTree = "<group>"; };
+		099F8DB224B355130006BD0F /* BlockTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTile.swift; sourceTree = "<group>"; };
+		099F8DB424B355C30006BD0F /* BlockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 				099F8D9E24B34FF80006BD0F /* GameViewController.swift */,
 				099F8DA024B34FF80006BD0F /* Main.storyboard */,
 				099F8DA324B34FF90006BD0F /* Assets.xcassets */,
+				099F8DB224B355130006BD0F /* BlockTile.swift */,
+				099F8DB424B355C30006BD0F /* BlockModel.swift */,
 				099F8DA524B34FF90006BD0F /* LaunchScreen.storyboard */,
 				099F8DA824B34FF90006BD0F /* Info.plist */,
 			);
@@ -154,9 +160,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				099F8DB524B355C30006BD0F /* BlockModel.swift in Sources */,
 				099F8D9D24B34FF80006BD0F /* GameScene.swift in Sources */,
 				099F8D9F24B34FF80006BD0F /* GameViewController.swift in Sources */,
 				099F8D9724B34FF80006BD0F /* AppDelegate.swift in Sources */,
+				099F8DB324B355130006BD0F /* BlockTile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
