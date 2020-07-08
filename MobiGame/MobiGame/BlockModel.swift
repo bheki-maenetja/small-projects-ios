@@ -11,6 +11,7 @@ import UIKit
 class BlockModel: Any {
     var twoDArray = [[BlockTile]]()
     weak var myGameScene: GameScene!
+    var matchLengthRequired = 3
     
     func setupModel() {
         var i = 0
@@ -49,5 +50,42 @@ class BlockModel: Any {
         
         firstPiece.outerIndex = otherPieceOuterIndex
         otherPiece.outerIndex = firstPieceOuterIndex
+    }
+    
+    func findMatches() -> [BlockTile] {
+        var matches = [BlockTile]()
+        return matches
+    }
+    
+    func findMatches(inStrips: [[BlockTile]]) -> [BlockTile] {
+        var foundPieces = [BlockTile]()
+        
+        for strip in inStrips {
+            var currentType = strip[0].tileType
+            var i = 1
+            
+            var stack = [BlockTile]()
+            stack.append(strip[0])
+            
+            while (i < strip.count) {
+                let cp = strip[i]
+                if (cp.tileType == currentType) {
+                    stack.append(cp)
+                } else {
+                    if (stack.count >= self.matchLengthRequired) {
+                        foundPieces.append(contentsOf: stack)
+                    }
+                    stack.removeAll()
+                    currentType = strip[i].tileType
+                    stack.append(strip[i])
+                }
+                i += 1
+            }
+            if (stack.count >= self.matchLengthRequired) {
+                foundPieces.append(contentsOf: stack)
+                stack.removeAll()
+            }
+        }
+        return foundPieces
     }
 }

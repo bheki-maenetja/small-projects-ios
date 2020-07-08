@@ -85,8 +85,14 @@ class GameScene: SKScene {
                 self.selectedTile?.removeAllActions()
                 self.gameModel.switchTiles(pressedTile, otherPiece: self.selectedTile!)
                 self.selectedTile = nil
+                self.findMatchesAndRepopulate()
             })
         }
+    }
+    
+    func findMatchesAndRepopulate() {
+        self.arrangeTiles()
+        let tilesToRemove = self.gameModel.findMatches()
     }
     
     override func didMove(to view: SKView) {
