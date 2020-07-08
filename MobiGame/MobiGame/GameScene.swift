@@ -34,6 +34,13 @@ class GameScene: SKScene {
         return sprite
     }
     
+    func gridInformation() -> (margin: CGFloat, tileSize: CGFloat, startY: CGFloat) {
+        let gridMargin = CGFloat(20)
+        let tileSize = (UIScreen.main.bounds.size.width - CGFloat(gridMargin * 2)) / 10
+        let startY = (tileSize * 10) + gridMargin
+        return (margin: gridMargin, tileSize: tileSize, startY: startY)
+    }
+    
     override func didMove(to view: SKView) {
         self.setup()
     }
