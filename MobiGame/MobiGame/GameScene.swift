@@ -15,6 +15,7 @@ class GameScene: SKScene {
     private var spinnyNode : SKShapeNode?
     
     var gameModel = BlockModel()
+    var selectedTile: BlockTile?
     
     func setup() {
         self.gameModel.myGameScene = self
@@ -65,6 +66,28 @@ class GameScene: SKScene {
         }
     }
     
+    func tileWasPressed(_ pressedTile: BlockTile) {
+        var spinForever = true
+        
+        if self.selectedTile == nil {
+            self.selectedTile = pressedTile
+            spinForever = true
+        } else {
+            spinForever = false
+        }
+        
+        let action = SKAction.rotate(byAngle: 3, duration: 1)
+        
+        if spinForever {
+            pressedTile.run(SKAction.repeatForever(action))
+        } else {
+            pressedTile.run(action, completion: {
+                self.selectedTile?.removeAllActions()
+                self.selectedTile = nil
+            })
+        }
+    }
+    
     override func didMove(to view: SKView) {
         self.setup()
     }
@@ -83,7 +106,18 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let clickLocation = touches.first?.location(in: self.view)
+        let convertedLocation = self.convertPoint(fromView: clickLocation!)
+        let clickedNode = self.atPoint(convertedLocation)
         
+        if (clickedNode.isKind(of: BlockTile.self) == false) {
+            print("You didn't click a tile!")
+            return
+        } else {
+            print("Tile!" + clickedNode.debugDescription)
+            let pressedTile = clickedNode as! BlockTile
+            self.tileWasPressed(pressedTile)
+        }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
