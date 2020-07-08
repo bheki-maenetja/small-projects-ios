@@ -83,6 +83,7 @@ class GameScene: SKScene {
         } else {
             pressedTile.run(action, completion: {
                 self.selectedTile?.removeAllActions()
+                self.gameModel.switchTiles(pressedTile, otherPiece: self.selectedTile!)
                 self.selectedTile = nil
             })
         }

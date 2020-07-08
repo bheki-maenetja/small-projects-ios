@@ -33,4 +33,21 @@ class BlockModel: Any {
             i += 1
         }
     }
+    
+    func switchTiles(_ firstPiece: BlockTile, otherPiece: BlockTile) {
+        let firstPieceOuterIndex = firstPiece.outerIndex
+        let otherPieceOuterIndex = otherPiece.outerIndex
+        
+        let firstPieceInnerIndex = self.twoDArray[firstPieceOuterIndex].firstIndex(of: firstPiece)
+        let otherPieceInnerIndex = self.twoDArray[otherPieceOuterIndex].firstIndex(of: otherPiece)
+        
+        self.twoDArray[firstPieceOuterIndex].remove(at: firstPieceInnerIndex!)
+        self.twoDArray[firstPieceOuterIndex].insert(otherPiece, at: firstPieceInnerIndex!)
+        
+        self.twoDArray[otherPieceOuterIndex].remove(at: otherPieceInnerIndex!)
+        self.twoDArray[otherPieceOuterIndex].insert(firstPiece, at: otherPieceInnerIndex!)
+        
+        firstPiece.outerIndex = otherPieceOuterIndex
+        otherPiece.outerIndex = firstPieceOuterIndex
+    }
 }
