@@ -20,14 +20,15 @@ class GameScene: SKScene {
         self.gameModel.myGameScene = self
         self.gameModel.setupModel()
         self.gameModel.populateModel()
+        self.arrangeTiles()
     }
     
     func setupSprite(_ withImage:Int) -> BlockTile {
         let sprite = BlockTile(imageNamed: "tile_" + String(withImage))
         
         sprite.tileType = withImage
-        sprite.xScale = 1.5
-        sprite.yScale = 1.5
+        sprite.xScale = 0.75
+        sprite.yScale = 0.75
         
         self.addChild(sprite)
         
@@ -39,6 +40,29 @@ class GameScene: SKScene {
         let tileSize = (UIScreen.main.bounds.size.width - CGFloat(gridMargin * 2)) / 10
         let startY = (tileSize * 10) + gridMargin
         return (margin: gridMargin, tileSize: tileSize, startY: startY)
+    }
+    
+    func arrangeTiles() {
+        let gridInfo = self.gridInformation()
+        var location = CGPoint(x: gridInfo.margin + (gridInfo.tileSize / 2), y: gridInfo.startY)
+        
+        var i = 0
+        
+        for verticalStrip in self.gameModel.twoDArray {
+            var verticalCounter = 1
+            for gameTile in verticalStrip {
+                let convertedLocation = self.convertPoint(fromView: location)
+                
+                gameTile.run(SKAction.move(to: convertedLocation, duration: 0.1 * Double(verticalCounter)))
+                location.y -= gridInfo.tileSize
+                gameTile.outerIndex = i
+                
+                verticalCounter += 1
+            }
+            location.x += gridInfo.tileSize
+            location.y = gridInfo.startY
+            i += 1
+        }
     }
     
     override func didMove(to view: SKView) {

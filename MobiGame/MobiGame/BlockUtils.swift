@@ -10,7 +10,7 @@ import UIKit
 
 class BlockUtils: Any {
     
-    class func randomNumber() -> int {
+    class func randomNumber() -> Int {
         return Int(arc4random_uniform(UInt32(5))) + 1
     }
     
