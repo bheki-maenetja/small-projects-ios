@@ -113,6 +113,7 @@ class BlockModel: Any {
     }
     
     func deleteTile(_ tile: BlockTile) {
+        myGameScene.gameScore += 10
         tile.playMatch()
         var i = 0
         while (i < self.twoDArray.count) {

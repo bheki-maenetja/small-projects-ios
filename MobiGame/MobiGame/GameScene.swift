@@ -17,11 +17,19 @@ class GameScene: SKScene {
     var gameModel = BlockModel()
     var selectedTile: BlockTile?
     
+    var scoreLabel: SKLabelNode!
+    var gameScore: Int = 0 {
+        didSet {
+            scoreLabel.text = "Score: " + String(gameScore)
+        }
+    }
+    
     func setup() {
         self.gameModel.myGameScene = self
         self.gameModel.setupModel()
         self.gameModel.populateModel()
         self.arrangeTiles()
+        self.createScoreboard()
     }
     
     func setupSprite(_ withImage:Int) -> BlockTile {
@@ -104,6 +112,16 @@ class GameScene: SKScene {
             self.arrangeTiles()
             self.findMatchesAndRepopulate()
         }
+    }
+    
+    func createScoreboard() {
+        scoreLabel = SKLabelNode(fontNamed: "ArialMT")
+        scoreLabel.horizontalAlignmentMode = .center
+        scoreLabel.fontSize = 40
+        scoreLabel.zPosition = 99
+        scoreLabel.position = CGPoint(x: 0, y: -(self.frame.size.height / 2) + 80)
+        scoreLabel.text = "Score: " + String(gameScore)
+        addChild(scoreLabel)
     }
         
     override func didMove(to view: SKView) {
