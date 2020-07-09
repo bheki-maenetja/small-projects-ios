@@ -56,6 +56,10 @@ class BlockModel: Any {
         var matches = [BlockTile]()
         let verticalMatches = self.findMatches(inStrips: self.twoDArray)
         matches.append(contentsOf: verticalMatches)
+        
+        let horizontalMatches = self.findMatches(inStrips: self.rotateGrid())
+        matches.append(contentsOf: horizontalMatches)
+        
         return matches
     }
     
@@ -89,5 +93,16 @@ class BlockModel: Any {
             }
         }
         return foundPieces
+    }
+    
+    func rotateGrid() -> [[BlockTile]] {
+        let length = self.twoDArray[0].count
+        var returnValue = [[BlockTile]](repeating: [BlockTile](), count: length)
+        for index in 0..<length {
+            returnValue[index] = self.twoDArray.map {
+                $0[index]
+            }.reversed()
+        }
+        return returnValue
     }
 }
