@@ -93,8 +93,9 @@ class GameScene: SKScene {
     func findMatchesAndRepopulate() {
         self.arrangeTiles()
         let tilesToRemove = self.gameModel.findMatches()
+        self.gameModel.removeTiles(tilesToRemove)
     }
-    
+        
     override func didMove(to view: SKView) {
         self.setup()
     }

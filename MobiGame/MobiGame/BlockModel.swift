@@ -105,4 +105,23 @@ class BlockModel: Any {
         }
         return returnValue
     }
+    
+    func removeTiles(_ tilesToRemove: [BlockTile]) {
+        for tile in tilesToRemove {
+            self.deleteTile(tile)
+        }
+    }
+    
+    func deleteTile(_ tile: BlockTile) {
+        var i = 0
+        tile.removeFromParent()
+        while (i < self.twoDArray.count) {
+            let verticalStrip = self.twoDArray[i]
+            
+            if verticalStrip.firstIndex(of: tile) != nil {
+                self.twoDArray[i].remove(at: verticalStrip.firstIndex(of: tile)!)
+            }
+            i += 1
+        }
+    }
 }
