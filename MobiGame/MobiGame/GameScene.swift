@@ -67,6 +67,7 @@ class GameScene: SKScene {
     }
     
     func tileWasPressed(_ pressedTile: BlockTile) {
+        pressedTile.playSelect()
         var spinForever = true
         
         if self.selectedTile == nil {
@@ -98,7 +99,7 @@ class GameScene: SKScene {
         if tilesToRemove.count == 0 {
             return
         }
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (_) in
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (_) in
             self.gameModel.populateModel()
             self.arrangeTiles()
             self.findMatchesAndRepopulate()

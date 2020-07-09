@@ -15,4 +15,12 @@ class BlockTile: SKSpriteNode {
     
     let selectedSoundAction = SKAction.playSoundFileNamed("selection.wav", waitForCompletion: false)
     let magicSoundAction = SKAction.playSoundFileNamed("explosion.wav", waitForCompletion: false)
+    
+    func playSelect() {
+        self.run(self.selectedSoundAction)
+    }
+    
+    func playMatch() {
+        self.run(self.magicSoundAction)
+    }
 }
