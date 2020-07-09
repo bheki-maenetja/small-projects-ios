@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0922114324B711AE0082B16D /* matchparticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0922114224B711AE0082B16D /* matchparticle.sks */; };
+		0922114524B7212F0082B16D /* BlockScene2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0922114424B7212F0082B16D /* BlockScene2.swift */; };
+		0922114724B723A90082B16D /* BlockScene2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0922114624B723A90082B16D /* BlockScene2.sks */; };
 		099F8D9724B34FF80006BD0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099F8D9624B34FF80006BD0F /* AppDelegate.swift */; };
 		099F8D9924B34FF80006BD0F /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 099F8D9824B34FF80006BD0F /* GameScene.sks */; };
 		099F8D9B24B34FF80006BD0F /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 099F8D9A24B34FF80006BD0F /* Actions.sks */; };
@@ -25,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		0922114224B711AE0082B16D /* matchparticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = matchparticle.sks; sourceTree = "<group>"; };
+		0922114424B7212F0082B16D /* BlockScene2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockScene2.swift; sourceTree = "<group>"; };
+		0922114624B723A90082B16D /* BlockScene2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BlockScene2.sks; sourceTree = "<group>"; };
 		099F8D9324B34FF80006BD0F /* MobiGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobiGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		099F8D9624B34FF80006BD0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		099F8D9824B34FF80006BD0F /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -76,11 +80,13 @@
 				099F8DAE24B353C00006BD0F /* selection.wav */,
 				099F8D9624B34FF80006BD0F /* AppDelegate.swift */,
 				099F8D9824B34FF80006BD0F /* GameScene.sks */,
+				0922114424B7212F0082B16D /* BlockScene2.swift */,
 				099F8D9A24B34FF80006BD0F /* Actions.sks */,
 				099F8D9C24B34FF80006BD0F /* GameScene.swift */,
 				0922114224B711AE0082B16D /* matchparticle.sks */,
 				099F8DB624B358510006BD0F /* BlockUtils.swift */,
 				099F8D9E24B34FF80006BD0F /* GameViewController.swift */,
+				0922114624B723A90082B16D /* BlockScene2.sks */,
 				099F8DA024B34FF80006BD0F /* Main.storyboard */,
 				099F8DA324B34FF90006BD0F /* Assets.xcassets */,
 				099F8DB224B355130006BD0F /* BlockTile.swift */,
@@ -156,6 +162,7 @@
 				099F8DA424B34FF90006BD0F /* Assets.xcassets in Resources */,
 				099F8DB024B353C00006BD0F /* selection.wav in Resources */,
 				099F8DA724B34FF90006BD0F /* LaunchScreen.storyboard in Resources */,
+				0922114724B723A90082B16D /* BlockScene2.sks in Resources */,
 				099F8D9B24B34FF80006BD0F /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				099F8DB524B355C30006BD0F /* BlockModel.swift in Sources */,
+				0922114524B7212F0082B16D /* BlockScene2.swift in Sources */,
 				099F8D9D24B34FF80006BD0F /* GameScene.swift in Sources */,
 				099F8D9F24B34FF80006BD0F /* GameViewController.swift in Sources */,
 				099F8DB724B358510006BD0F /* BlockUtils.swift in Sources */,

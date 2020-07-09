@@ -25,6 +25,7 @@ class GameScene: SKScene {
     }
     
     func setup() {
+        self.backgroundColor = UIColor.purple
         self.gameModel.myGameScene = self
         self.gameModel.setupModel()
         self.gameModel.populateModel()
@@ -105,7 +106,15 @@ class GameScene: SKScene {
         self.gameModel.removeTiles(tilesToRemove)
         
         if tilesToRemove.count == 0 {
-            return
+            if gameScore >= 15000 {
+                let secondScene = BlockScene2(fileNamed: "BlockScene2")
+                let transition = SKTransition.flipVertical(withDuration: 1.0)
+                secondScene?.scaleMode = .aspectFill
+                scene?.view?.presentScene(secondScene!, transition: transition)
+            }
+            else {
+                return
+            }
         }
         Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (_) in
             self.gameModel.populateModel()
