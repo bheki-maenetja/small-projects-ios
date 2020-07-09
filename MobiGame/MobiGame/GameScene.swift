@@ -94,6 +94,15 @@ class GameScene: SKScene {
         self.arrangeTiles()
         let tilesToRemove = self.gameModel.findMatches()
         self.gameModel.removeTiles(tilesToRemove)
+        
+        if tilesToRemove.count == 0 {
+            return
+        }
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (_) in
+            self.gameModel.populateModel()
+            self.arrangeTiles()
+            self.findMatchesAndRepopulate()
+        }
     }
         
     override func didMove(to view: SKView) {
