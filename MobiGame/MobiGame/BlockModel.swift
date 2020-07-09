@@ -54,6 +54,8 @@ class BlockModel: Any {
     
     func findMatches() -> [BlockTile] {
         var matches = [BlockTile]()
+        let verticalMatches = self.findMatches(inStrips: self.twoDArray)
+        matches.append(contentsOf: verticalMatches)
         return matches
     }
     
