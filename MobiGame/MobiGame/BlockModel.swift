@@ -115,7 +115,6 @@ class BlockModel: Any {
     func deleteTile(_ tile: BlockTile) {
         tile.playMatch()
         var i = 0
-        tile.removeFromParent()
         while (i < self.twoDArray.count) {
             let verticalStrip = self.twoDArray[i]
             
