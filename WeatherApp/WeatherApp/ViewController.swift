@@ -41,6 +41,38 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     @IBAction func callAPI(_ sender: Any) {
+        let querytypeURL = "http://samples.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(long)&units=\(tempType)&appid=\(apiKey)"
+        
+        let session = URLSession.shared
+        let weatherURL = URL(string: querytypeURL)
+        let dataTask = session.dataTask(with: weatherURL!) {
+            (data: Data?, response: URLResponse?, error: Error?) in
+            if let error = error {
+                print("Error:\n\(error)")
+            } else {
+                if let data = data {
+                    let dataString = String(data: data, encoding: String.Encoding.utf8)
+                    print("All the weather data:\n\(dataString!)")
+                    
+                    if let jsonObj = ((try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? NSDictionary) as NSDictionary??) {
+                        if let mainDictionary = jsonObj?.value(forKey: "main") as? NSDictionary {
+                            if let temperature = mainDictionary.value(forKey: "temp") {
+                                DispatchQueue.main.sync {
+                                    self.LblTemp.text = "Location temperature: \(temperature)" + self.stringTemp
+                                }
+                            }
+                        } else {
+                            print("Error: unable to find temperature")
+                        }
+                    } else {
+                        print("Error: unable to convert json")
+                    }
+                } else {
+                    print("Error: did not receive data")
+                }
+            }
+        }
+        dataTask.resume()
     }
     
 }
