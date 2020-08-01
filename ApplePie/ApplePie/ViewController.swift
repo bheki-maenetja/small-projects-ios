@@ -20,8 +20,16 @@ class ViewController: UIViewController {
     
     var listOfWords = ["buccaneer", "swift", "glorious", "incandescent", "bug", "program"]
     let incorrectMovesAllowed = 7
-    var totalWins = 0
-    var totalLosses = 0
+    var totalWins = 0 {
+        didSet {
+            newRound()
+        }
+    }
+    var totalLosses = 0 {
+        didSet {
+            newRound()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,12 +42,13 @@ class ViewController: UIViewController {
         let letterString = sender.title(for: .normal)!
         let letter = Character(letterString.lowercased())
         currentGame.playerGuessed(letter: letter)
-        updateUI()
+        updateGameState()
     }
     
     func newRound() {
-        let newWord = listOfWords.removeFirst()
+        let newWord = listOfWords.randomElement()!
         currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed, guessedLetters: [])
+        enableLetterButtons(true)
         updateUI()
     }
     
@@ -53,6 +62,20 @@ class ViewController: UIViewController {
         treeImage.image = UIImage(named: "Tree \(currentGame.incorrectMovesRemaining)")
     }
     
-
+    func updateGameState() {
+      if currentGame.incorrectMovesRemaining == 0 {
+        totalLosses += 1
+      } else if currentGame.word == currentGame.formattedWord {
+        totalWins += 1
+      } else {
+        updateUI()
+      }
+    }
+    
+    func enableLetterButtons(_ enable: Bool) {
+      for button in letterButtons {
+        button.isEnabled = enable
+      }
+    }
 }
 
